@@ -1,0 +1,372 @@
+
+> runyth-scene-lightkeeper@1.1.1 check
+> npm run syntax && npm test && npm run audit
+
+
+> runyth-scene-lightkeeper@1.1.1 syntax
+> node tools/check-syntax.mjs
+
+Syntax validation passed for 13 production modules.
+
+> runyth-scene-lightkeeper@1.1.1 test
+> node --unhandled-rejections=strict --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: every template data-action is mapped and every mapped action is rendered
+ok 1 - every template data-action is mapped and every mapped action is rendered
+  ---
+  duration_ms: 3.263519
+  type: 'test'
+  ...
+# Subtest: all ControlPanel buttons execute with Foundry ApplicationV2 instance binding
+ok 2 - all ControlPanel buttons execute with Foundry ApplicationV2 instance binding
+  ---
+  duration_ms: 5.45516
+  type: 'test'
+  ...
+# Subtest: floating-board and settings-hub buttons execute with instance binding
+ok 3 - floating-board and settings-hub buttons execute with instance binding
+  ---
+  duration_ms: 0.842769
+  type: 'test'
+  ...
+# Subtest: UI action failures are contained and reported without unhandled rejection
+ok 4 - UI action failures are contained and reported without unhandled rejection
+  ---
+  duration_ms: 0.513229
+  type: 'test'
+  ...
+# Subtest: live preview tolerates synchronous returns and synchronous animation failures
+ok 5 - live preview tolerates synchronous returns and synchronous animation failures
+  ---
+  duration_ms: 20.469382
+  type: 'test'
+  ...
+# Subtest: Scene Controls callbacks execute and malformed array controls are ignored
+ok 6 - Scene Controls callbacks execute and malformed array controls are ignored
+  ---
+  duration_ms: 5.015699
+  type: 'test'
+  ...
+# Subtest: ControlPanel field conversion preserves types and nested Imperial dates
+ok 7 - ControlPanel field conversion preserves types and nested Imperial dates
+  ---
+  duration_ms: 0.717033
+  type: 'test'
+  ...
+# Subtest: ControlPanel change events and floating quick controls reach the Scene service
+ok 8 - ControlPanel change events and floating quick controls reach the Scene service
+  ---
+  duration_ms: 2.743879
+  type: 'test'
+  ...
+# Subtest: render hooks wire both input and change listeners to every interactive control
+ok 9 - render hooks wire both input and change listeners to every interactive control
+  ---
+  duration_ms: 2.174852
+  type: 'test'
+  ...
+# Subtest: Scene Control entry-point failures use the same contained error boundary
+ok 10 - Scene Control entry-point failures use the same contained error boundary
+  ---
+  duration_ms: 3.931191
+  type: 'test'
+  ...
+# Subtest: all three interfaces load as ApplicationV2 subclasses
+ok 11 - all three interfaces load as ApplicationV2 subclasses
+  ---
+  duration_ms: 9.679364
+  type: 'test'
+  ...
+# Subtest: primary windows declare stable IDs, templates, and responsive geometry
+ok 12 - primary windows declare stable IDs, templates, and responsive geometry
+  ---
+  duration_ms: 0.710201
+  type: 'test'
+  ...
+# Subtest: ApplicationV2 action maps use module-specific actions
+ok 13 - ApplicationV2 action maps use module-specific actions
+  ---
+  duration_ms: 0.475499
+  type: 'test'
+  ...
+# Subtest: native close hooks do not block window closure on asynchronous setting writes
+ok 14 - native close hooks do not block window closure on asynchronous setting writes
+  ---
+  duration_ms: 1.183529
+  type: 'test'
+  ...
+# Subtest: perceived darkness is a direct understandable 0-100 mapping
+ok 15 - perceived darkness is a direct understandable 0-100 mapping
+  ---
+  duration_ms: 7.270641
+  type: 'test'
+  ...
+# Subtest: summer mornings are brighter than winter mornings
+ok 16 - summer mornings are brighter than winter mornings
+  ---
+  duration_ms: 0.858405
+  type: 'test'
+  ...
+# Subtest: moonlight reduces darkness only at night
+ok 17 - moonlight reduces darkness only at night
+  ---
+  duration_ms: 0.410012
+  type: 'test'
+  ...
+# Subtest: day phase runs from sunrise through sunset into night
+ok 18 - day phase runs from sunrise through sunset into night
+  ---
+  duration_ms: 0.481355
+  type: 'test'
+  ...
+# Subtest: ordinary clock formatting and Imperial conversion are bounded
+ok 19 - ordinary clock formatting and Imperial conversion are bounded
+  ---
+  duration_ms: 0.905362
+  type: 'test'
+  ...
+# Subtest: Imperial watches contain eleven Glocken each
+ok 20 - Imperial watches contain eleven Glocken each
+  ---
+  duration_ms: 2.570231
+  type: 'test'
+  ...
+# Subtest: Imperial days map to three Umgänge of eleven days
+ok 21 - Imperial days map to three Umgänge of eleven days
+  ---
+  duration_ms: 0.995089
+  type: 'test'
+  ...
+# Subtest: 33 Imperial months map deterministically to seasons
+ok 22 - 33 Imperial months map deterministically to seasons
+  ---
+  duration_ms: 0.355259
+  type: 'test'
+  ...
+# runyth-scene-lightkeeper | Initialized v1.1.1; API 1.1.1.
+# Subtest: main module registers lifecycle hooks without eager Foundry mutations
+ok 23 - main module registers lifecycle hooks without eager Foundry mutations
+  ---
+  duration_ms: 1.397407
+  type: 'test'
+  ...
+# Subtest: init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+ok 24 - init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+  ---
+  duration_ms: 2.250674
+  type: 'test'
+  ...
+# Subtest: v13 Scene Controls are added once to a record with the required active tool
+ok 25 - v13 Scene Controls are added once to a record with the required active tool
+  ---
+  duration_ms: 1.5681
+  type: 'test'
+  ...
+# Subtest: ready completes without auto-opening or first-run dialog when disabled
+ok 26 - ready completes without auto-opening or first-run dialog when disabled
+  ---
+  duration_ms: 7.176524
+  type: 'test'
+  ...
+# Subtest: setting-triggered Scene Controls refresh contains synchronous render failures
+ok 27 - setting-triggered Scene Controls refresh contains synchronous render failures
+  ---
+  duration_ms: 1.380317
+  type: 'test'
+  ...
+# runyth-scene-lightkeeper | Initialized v1.1.1; API 1.1.1.
+# Subtest: rapid scene switches carry the original current illumination to the final scene
+ok 28 - rapid scene switches carry the original current illumination to the final scene
+  ---
+  duration_ms: 18.177162
+  type: 'test'
+  ...
+# Subtest: runtime exposes permanent entry points and the requested public API
+ok 29 - runtime exposes permanent entry points and the requested public API
+  ---
+  duration_ms: 2.616979
+  type: 'test'
+  ...
+# Subtest: window persistence is client-scoped and all major windows are resizable ApplicationV2
+ok 30 - window persistence is client-scoped and all major windows are resizable ApplicationV2
+  ---
+  duration_ms: 1.058783
+  type: 'test'
+  ...
+# Subtest: fog reset is explicit, GM-only, and uses the public FogManager
+ok 31 - fog reset is explicit, GM-only, and uses the public FogManager
+  ---
+  duration_ms: 0.627056
+  type: 'test'
+  ...
+# Subtest: global illumination defaults to the intuitive automatic wrapper while preserve remains available
+ok 32 - global illumination defaults to the intuitive automatic wrapper while preserve remains available
+  ---
+  duration_ms: 0.668066
+  type: 'test'
+  ...
+# Subtest: templates expose all requested intuitive control surfaces
+ok 33 - templates expose all requested intuitive control surfaces
+  ---
+  duration_ms: 0.756521
+  type: 'test'
+  ...
+# Subtest: every module-owned confirmation safely permits native window closure
+ok 34 - every module-owned confirmation safely permits native window closure
+  ---
+  duration_ms: 0.84444
+  type: 'test'
+  ...
+# Subtest: scene-switch updates cannot force closed module windows back open
+ok 35 - scene-switch updates cannot force closed module windows back open
+  ---
+  duration_ms: 0.783345
+  type: 'test'
+  ...
+# Subtest: scene-switch synchronization is isolated from fog, vision, tokens, walls, and ambient lights
+ok 36 - scene-switch synchronization is isolated from fog, vision, tokens, walls, and ambient lights
+  ---
+  duration_ms: 0.596251
+  type: 'test'
+  ...
+# Subtest: grade synchronization copies exact visible darkness and global illumination only
+ok 37 - grade synchronization copies exact visible darkness and global illumination only
+  ---
+  duration_ms: 7.542036
+  type: 'test'
+  ...
+# Subtest: profile synchronization carries time, moon, season, Imperial date, and global light
+ok 38 - profile synchronization carries time, moon, season, Imperial date, and global light
+  ---
+  duration_ms: 2.833211
+  type: 'test'
+  ...
+# Subtest: remembered lighting supports initial-load synchronization without a source scene
+ok 39 - remembered lighting supports initial-load synchronization without a source scene
+  ---
+  duration_ms: 2.14446
+  type: 'test'
+  ...
+# Subtest: disabled synchronization and already matching scenes avoid scene writes
+ok 40 - disabled synchronization and already matching scenes avoid scene writes
+  ---
+  duration_ms: 3.431326
+  type: 'test'
+  ...
+# Subtest: applying perceived darkness performs one contained Scene update
+ok 41 - applying perceived darkness performs one contained Scene update
+  ---
+  duration_ms: 4.778777
+  type: 'test'
+  ...
+# Subtest: automatic global illumination writes an explicit bounded cutoff
+ok 42 - automatic global illumination writes an explicit bounded cutoff
+  ---
+  duration_ms: 2.377251
+  type: 'test'
+  ...
+# Subtest: patching state preserves nested Imperial date fields
+ok 43 - patching state preserves nested Imperial date fields
+  ---
+  duration_ms: 2.981724
+  type: 'test'
+  ...
+# Subtest: scene mutations reject an unauthorized user
+ok 44 - scene mutations reject an unauthorized user
+  ---
+  duration_ms: 2.376901
+  type: 'test'
+  ...
+# Subtest: native vision, fog, and lock toggles update only their exact fields
+ok 45 - native vision, fog, and lock toggles update only their exact fields
+  ---
+  duration_ms: 0.763247
+  type: 'test'
+  ...
+# Subtest: fog reset is limited to a GM and the active canvas Scene
+ok 46 - fog reset is limited to a GM and the active canvas Scene
+  ---
+  duration_ms: 1.866099
+  type: 'test'
+  ...
+# Subtest: stored malformed Scene flags normalize to safe values
+ok 47 - stored malformed Scene flags normalize to safe values
+  ---
+  duration_ms: 0.879323
+  type: 'test'
+  ...
+# Subtest: all global-light modes are explicit and preserve does not write global-light fields
+ok 48 - all global-light modes are explicit and preserve does not write global-light fields
+  ---
+  duration_ms: 5.574333
+  type: 'test'
+  ...
+# Subtest: transition duration is clamped and passed as milliseconds
+ok 49 - transition duration is clamped and passed as milliseconds
+  ---
+  duration_ms: 1.348746
+  type: 'test'
+  ...
+# Subtest: all mutation helpers report a clean no-scene error
+ok 50 - all mutation helpers report a clean no-scene error
+  ---
+  duration_ms: 3.838549
+  type: 'test'
+  ...
+# Subtest: malformed state is normalized without losing safe defaults
+ok 51 - malformed state is normalized without losing safe defaults
+  ---
+  duration_ms: 4.051103
+  type: 'test'
+  ...
+# Subtest: only selected mode drives scene darkness
+ok 52 - only selected mode drives scene darkness
+  ---
+  duration_ms: 2.946069
+  type: 'test'
+  ...
+# Subtest: season can optionally derive from the Imperial month
+ok 53 - season can optionally derive from the Imperial month
+  ---
+  duration_ms: 1.164007
+  type: 'test'
+  ...
+# Subtest: all four modes return a native Foundry darkness value
+ok 54 - all four modes return a native Foundry darkness value
+  ---
+  duration_ms: 1.348809
+  type: 'test'
+  ...
+# Subtest: restored windows are clamped to the current viewport
+ok 55 - restored windows are clamped to the current viewport
+  ---
+  duration_ms: 1.573256
+  type: 'test'
+  ...
+# Subtest: only finite integer geometry is persisted
+ok 56 - only finite integer geometry is persisted
+  ---
+  duration_ms: 4.963973
+  type: 'test'
+  ...
+# Subtest: layout reset clears all client geometry records
+ok 57 - layout reset clears all client geometry records
+  ---
+  duration_ms: 0.705942
+  type: 'test'
+  ...
+1..57
+# tests 57
+# suites 0
+# pass 57
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1000.406408
+
+> runyth-scene-lightkeeper@1.1.1 audit
+> node tools/static-audit.mjs
+
+Static Foundry v13 audit passed: 17 runtime source files, 149 bilingual keys.

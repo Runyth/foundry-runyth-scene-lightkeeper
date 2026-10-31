@@ -1,0 +1,147 @@
+<div class="slk-shell">
+  <header class="slk-hero">
+    <div>
+      <p class="slk-kicker">{{localize "SLK.Panel.Kicker"}}</p>
+      <h2>{{sceneName}}</h2>
+    </div>
+    <div class="slk-hero-actions">
+      <button type="button" data-action="openGuide" class="slk-icon-button" title="{{localize 'SLK.Guide.ButtonHint'}}" aria-label="{{localize 'SLK.Guide.Button'}}"><i class="fa-solid fa-circle-question"></i></button>
+      <div class="slk-darkness-meter" title="{{localize 'SLK.Panel.DarknessHint'}}">
+        <strong>{{darknessPercent}}%</strong>
+        <span>{{band}}</span>
+      </div>
+    </div>
+  </header>
+
+  {{#unless hasScene}}
+    <div class="slk-empty">{{localize "SLK.Error.NoScene"}}</div>
+  {{else}}
+    <nav class="slk-mode-tabs" aria-label="{{localize 'SLK.Panel.ModeChooser'}}">
+      {{#each modes}}
+        <button type="button" data-action="switchMode" data-mode="{{value}}" class="{{#if active}}active{{/if}} {{#if applied}}applied{{/if}}" {{#unless ../canManage}}disabled{{/unless}}>
+          <i class="fa-solid {{icon}}" aria-hidden="true"></i><span>{{label}}</span>
+          {{#if applied}}<small title="{{localize 'SLK.Apply.CurrentMode'}}"><i class="fa-solid fa-check"></i></small>{{/if}}
+        </button>
+      {{/each}}
+    </nav>
+
+    {{#if selectedModePending}}
+      <div class="slk-preview-notice"><i class="fa-solid fa-eye"></i><span>{{localize "SLK.Apply.ModePreview"}}</span></div>
+    {{/if}}
+
+    <main class="slk-main-grid">
+      <section class="slk-primary-card">
+        {{#if (slkEq mode "feel")}}
+          <h3>{{localize "SLK.Feel.Title"}}</h3>
+          <p>{{localize "SLK.Feel.Hint"}}</p>
+          <div class="slk-slider-head"><span>{{localize "SLK.Common.Bright"}}</span><output data-slk-output="feel">{{state.feel}}</output><span>{{localize "SLK.Common.PitchBlack"}}</span></div>
+          <input data-slk-field="feel" type="range" min="0" max="100" step="1" value="{{state.feel}}" {{#unless canManage}}disabled{{/unless}}>
+          <div class="slk-presets">
+            <button type="button" data-action="applyPreset" data-feel="0" {{#unless canManage}}disabled{{/unless}}>{{localize "SLK.Preset.BrightDay"}}</button>
+            <button type="button" data-action="applyPreset" data-feel="22" {{#unless canManage}}disabled{{/unless}}>{{localize "SLK.Preset.Overcast"}}</button>
+            <button type="button" data-action="applyPreset" data-feel="50" {{#unless canManage}}disabled{{/unless}}>{{localize "SLK.Preset.Twilight"}}</button>
+            <button type="button" data-action="applyPreset" data-feel="86" {{#unless canManage}}disabled{{/unless}}>{{localize "SLK.Preset.DarkNight"}}</button>
+            <button type="button" data-action="applyPreset" data-feel="100" {{#unless canManage}}disabled{{/unless}}>{{localize "SLK.Preset.PitchBlack"}}</button>
+          </div>
+        {{/if}}
+
+        {{#if (slkEq mode "phase")}}
+          <h3>{{localize "SLK.Phase.Title"}}</h3>
+          <p>{{localize "SLK.Phase.Hint"}}</p>
+          <div class="slk-slider-head"><span>{{localize "SLK.Phase.Sunrise"}}</span><output data-slk-output="phase">{{state.phase}}</output><span>{{localize "SLK.Phase.Night"}}</span></div>
+          <input data-slk-field="phase" type="range" min="0" max="100" step="1" value="{{state.phase}}" {{#unless canManage}}disabled{{/unless}}>
+          <div class="slk-time-equivalents">
+            <p><i class="fa-solid fa-clock"></i><span>{{localize "SLK.Phase.Approx"}}</span><strong>{{phaseClockLabel}}</strong></p>
+            <p><i class="fa-solid fa-bell"></i><span>{{localize "SLK.Phase.ApproxImperial"}}</span><strong>{{phaseImperialLabel}}</strong></p>
+            {{#each phaseTimeSystems}}<p><i class="fa-solid fa-calendar-clock"></i><span>{{label}}:</span><strong>{{value}}</strong></p>{{/each}}
+          </div>
+        {{/if}}
+
+        {{#if (slkEq mode "clock")}}
+          <h3>{{localize "SLK.Clock.Title"}}</h3>
+          <p>{{localize "SLK.Clock.Hint"}}</p>
+          <div class="slk-slider-head"><span>00:00</span><output data-slk-output="clockMinutes">{{clockLabel}}</output><span>23:59</span></div>
+          <input data-slk-field="clockMinutes" data-format="clock" type="range" min="0" max="1439" step="15" value="{{state.clockMinutes}}" {{#unless canManage}}disabled{{/unless}}>
+          <div class="slk-date-grid">
+            <label>{{localize "SLK.Ordinary.Year"}}<input data-slk-field="ordinaryYear" type="number" min="0" max="9999" value="{{state.ordinaryDate.year}}" {{#unless canManage}}disabled{{/unless}}></label>
+            <label>{{localize "SLK.Ordinary.Month"}}<input data-slk-field="ordinaryMonth" type="number" min="1" max="12" value="{{state.ordinaryDate.month}}" {{#unless canManage}}disabled{{/unless}}></label>
+            <label>{{localize "SLK.Ordinary.Day"}}<input data-slk-field="ordinaryDay" type="number" min="1" max="31" value="{{state.ordinaryDate.day}}" {{#unless canManage}}disabled{{/unless}}></label>
+          </div>
+          <div class="slk-time-equivalents">
+            <p><i class="fa-solid fa-bell"></i><span>{{localize "SLK.Clock.ApproxImperial"}}</span><strong>{{clockImperialLabel}}</strong></p>
+            {{#each clockTimeSystems}}<p><i class="fa-solid fa-calendar-clock"></i><span>{{label}}:</span><strong>{{value}}</strong></p>{{/each}}
+          </div>
+        {{/if}}
+
+        {{#if (slkEq mode "imperial")}}
+          <h3>{{localize "SLK.Imperial.Title"}}</h3>
+          <p>{{localize "SLK.Imperial.Hint"}}</p>
+          <div class="slk-slider-head"><span>{{localize "SLK.Imperial.Bell"}} 1</span><output data-slk-output="imperialBell">{{state.imperialBell}}</output><span>{{localize "SLK.Imperial.Bell"}} 33</span></div>
+          <input data-slk-field="imperialBell" type="range" min="1" max="33" step="1" value="{{state.imperialBell}}" {{#unless canManage}}disabled{{/unless}}>
+          <div class="slk-facts">
+            <span><strong>{{watchLabel}}</strong>, {{localize "SLK.Imperial.BellInWatch"}} {{bellInWatch}}</span>
+            <span>{{localize "SLK.Imperial.OrdinaryEquivalent"}} {{imperialClockLabel}}</span>
+          </div>
+          <div class="slk-date-grid">
+            <label>{{localize "SLK.Imperial.Year"}}<input data-slk-field="imperialYear" type="number" min="0" max="9999" value="{{state.imperialDate.year}}" {{#unless canManage}}disabled{{/unless}}></label>
+            <label>{{localize "SLK.Imperial.Month"}}<input data-slk-field="imperialMonth" type="number" min="1" max="33" value="{{state.imperialDate.month}}" {{#unless canManage}}disabled{{/unless}}></label>
+            <label>{{localize "SLK.Imperial.Day"}}<input data-slk-field="imperialDay" type="number" min="1" max="33" value="{{state.imperialDate.day}}" {{#unless canManage}}disabled{{/unless}}></label>
+          </div>
+          <p class="slk-derived">{{localize "SLK.Imperial.Umgang"}} {{umgang}}, {{localize "SLK.Imperial.DayInUmgang"}} {{dayInUmgang}}</p>
+          {{#if imperialTimeSystems}}<div class="slk-time-equivalents">{{#each imperialTimeSystems}}<p><i class="fa-solid fa-calendar-clock"></i><span>{{label}}:</span><strong>{{value}}</strong></p>{{/each}}</div>{{/if}}
+        {{/if}}
+
+        {{#if showApplyControls}}
+          <div class="slk-apply-row {{#if hasPendingChanges}}pending{{/if}}">
+            <div><strong>{{localize "SLK.Apply.Title"}}</strong><small>{{pendingHint}}</small></div>
+            <button type="button" data-action="discardChanges" {{#unless hasPendingChanges}}disabled{{/unless}}><i class="fa-solid fa-rotate-left"></i> {{localize "SLK.Apply.Discard"}}</button>
+            <button type="button" data-action="applyScheme" class="slk-primary-action" {{#unless canApplyChanges}}disabled{{/unless}}><i class="fa-solid fa-check"></i> {{localize "SLK.Apply.Button"}}</button>
+          </div>
+        {{/if}}
+      </section>
+
+      <aside class="slk-side-stack">
+        <section class="slk-card">
+          <h3><i class="fa-solid fa-moon"></i> {{localize "SLK.Moon.Title"}}</h3>
+          <div class="slk-slider-head"><span>{{localize "SLK.Moon.New"}}</span><output data-slk-output="moonIndex">{{moonLabel}}</output><span>{{localize "SLK.Moon.Full"}}</span></div>
+          <input data-slk-field="moonIndex" data-format="moon" type="range" min="0" max="4" step="1" value="{{state.moonIndex}}" {{#unless canManage}}disabled{{/unless}}>
+        </section>
+
+        <section class="slk-card">
+          <h3><i class="fa-solid fa-leaf"></i> {{localize "SLK.Season.Title"}}</h3>
+          <label class="slk-field"><span>{{localize "SLK.Season.Source"}}</span><select data-slk-field="seasonMode" {{#unless canManage}}disabled{{/unless}}>{{#each seasonModes}}<option value="{{value}}" {{#if selected}}selected{{/if}} {{#if disabled}}disabled{{/if}}>{{label}}</option>{{/each}}</select></label>
+          <label class="slk-field"><span>{{localize "SLK.Season.Current"}}</span><select data-slk-field="season" {{#unless canManage}}disabled{{/unless}}>{{#each seasons}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+          {{#if calendarSeasonSelected}}<small>{{localize "SLK.Season.CalendarHint"}}</small>{{/if}}
+          <small>{{#if seasonalEnabled}}{{localize "SLK.Season.Active"}}: {{effectiveSeasonLabel}}{{else}}{{localize "SLK.Season.Disabled"}}{{/if}}</small>
+        </section>
+
+        <section class="slk-card">
+          <h3><i class="fa-solid fa-lightbulb"></i> {{localize "SLK.GlobalLight.Title"}}</h3>
+          <label class="slk-field"><span>{{localize "SLK.GlobalLight.Mode"}}</span><select data-slk-field="lightMode" {{#unless canManage}}disabled{{/unless}}>{{#each lightModes}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+          <label class="slk-field"><span>{{localize "SLK.GlobalLight.Cutoff"}} <output data-slk-output="naturalLightCutoff">{{state.naturalLightCutoff}}</output>%</span><input data-slk-field="naturalLightCutoff" type="range" min="1" max="100" step="1" value="{{state.naturalLightCutoff}}" {{#unless canManage}}disabled{{/unless}}></label>
+          <label class="slk-field"><span>{{localize "SLK.GlobalLight.Transition"}} <output data-slk-output="transitionSeconds">{{state.transitionSeconds}}</output>s</span><input data-slk-field="transitionSeconds" type="range" min="0" max="30" step="1" value="{{state.transitionSeconds}}" {{#unless canManage}}disabled{{/unless}}></label>
+          <button type="button" data-action="toggleLock" class="{{#if darknessLocked}}active{{/if}}" {{#unless canManage}}disabled{{/unless}}><i class="fa-solid fa-lock"></i> {{localize "SLK.GlobalLight.Lock"}}</button>
+          <div class="slk-sync-status {{#if sceneSyncEnabled}}active{{/if}}">
+            <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+            <span><strong>{{localize "SLK.SceneSync.Status"}}</strong><small>{{sceneSyncLabel}}</small></span>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <section class="slk-fog-row">
+      <div><h3>{{localize "SLK.Fog.Title"}}</h3><p>{{localize "SLK.Fog.Hint"}}</p></div>
+      <div class="slk-action-row">
+        <button type="button" data-action="toggleVision" class="{{#if tokenVision}}active{{/if}}" {{#unless canManage}}disabled{{/unless}}><i class="fa-solid fa-eye"></i> {{localize "SLK.Fog.TokenVision"}}</button>
+        <button type="button" data-action="toggleFog" class="{{#if fogExploration}}active{{/if}}" {{#unless canManage}}disabled{{/unless}}><i class="fa-solid fa-cloud"></i> {{localize "SLK.Fog.Exploration"}}</button>
+        <button type="button" data-action="resetFog" class="danger" {{#unless canManage}}disabled{{/unless}}><i class="fa-solid fa-eraser"></i> {{localize "SLK.Fog.Reset"}}</button>
+      </div>
+    </section>
+
+    <footer class="slk-footer">
+      <button type="button" data-action="openGuide"><i class="fa-solid fa-circle-question"></i> {{localize "SLK.Guide.Button"}}</button>
+      <button type="button" data-action="toggleFloating"><i class="fa-solid fa-window-restore"></i> {{localize "SLK.Floating.Toggle"}}</button>
+      <button type="button" data-action="openSettings"><i class="fa-solid fa-gear"></i> {{localize "SLK.Common.Settings"}}</button>
+    </footer>
+  {{/unless}}
+</div>

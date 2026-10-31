@@ -1,0 +1,35 @@
+Scene Lightkeeper 1.1.5 — Automated Test Results
+Date: 2026-08-19
+
+Node test runner:
+  Tests:     95
+  Passed:    95
+  Failed:    0
+  Cancelled: 0
+  Skipped:   0
+  Todo:      0
+
+Execution mode:
+  node --unhandled-rejections=strict --test tests/*.test.mjs
+
+New or expanded 1.1.5 regression areas:
+  - Short visible Settings-sidebar launcher labels
+  - Full native tooltip and ARIA action names retained
+  - Two-column minmax(0, 1fr) shrink behaviour
+  - No-wrap overflow containment and ellipsis fallback
+  - Removal of narrow-screen vertical launcher stacking
+  - Standard launcher remains the default
+  - Compact launcher is a restricted world-level option
+  - Compact mode retains both launcher actions
+  - Compact logo/prose reduction
+  - Compact action geometry remains 28x26 px
+  - Already-rendered launcher updates immediately when the setting changes
+  - English/German parity for all new UI strings
+
+Additional gates are recorded in VALIDATION_1.1.5.txt.
+
+Static gates:
+  Production JavaScript syntax files: 17 passed
+  Foundry v13 runtime source files:    21 passed
+  Modular language packs:              2 passed
+  English baseline localization keys: 204 passed

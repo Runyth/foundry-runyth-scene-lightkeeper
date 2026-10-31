@@ -1,0 +1,37 @@
+Scene Lightkeeper 1.1.4 — Automated Test Results
+Date: 2026-08-05
+
+Node test runner:
+  Tests:     89
+  Passed:    89
+  Failed:    0
+  Cancelled: 0
+  Skipped:   0
+  Todo:      0
+
+Execution mode:
+  node --unhandled-rejections=strict --test tests/*.test.mjs
+
+New or expanded 1.1.4 regression areas:
+  - Generic and Escape-equivalent floating-board close rejection
+  - Explicit board-owned X closure
+  - Open-or-focus launcher semantics
+  - Native frame close suppression and minimization disabled
+  - External teardown restoration
+  - Browser visibility-return restoration
+  - Foundry-window focus restoration
+  - Sticky-guard listener cleanup
+  - Default immediate-mode Apply explanation
+  - Staged-mode Apply/Discard visibility
+  - Settings-sidebar launcher injection
+  - Settings-sidebar rerender deduplication
+  - GM-only launcher visibility
+  - ApplicationV2 instance-bound launcher actions
+
+Additional gates are recorded in VALIDATION_1.1.4.txt.
+
+Static gates:
+  Production JavaScript syntax files: 17 passed
+  Foundry v13 runtime source files:    21 passed
+  Modular language packs:              2 passed
+  English baseline localization keys: 198 passed

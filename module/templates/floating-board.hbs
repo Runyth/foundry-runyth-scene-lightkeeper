@@ -1,0 +1,27 @@
+<div class="slk-floating-content">
+  <header>
+    <div><small>{{sceneName}}</small><strong>{{darknessPercent}}% · {{band}}</strong></div>
+    <nav>
+      <button type="button" data-action="openGuide" title="{{localize 'SLK.Guide.ButtonHint'}}"><i class="fa-solid fa-circle-question"></i></button>
+      <button type="button" data-action="openPanel" title="{{localize 'SLK.Controls.OpenPanel'}}"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+      <button type="button" data-action="closeBoard" class="slk-floating-close" title="{{localize 'SLK.Floating.Close'}}" aria-label="{{localize 'SLK.Floating.Close'}}"><i class="fa-solid fa-xmark"></i></button>
+    </nav>
+  </header>
+  {{#if hasScene}}
+    <label><span>{{localize "SLK.Mode.Feel"}} <output data-slk-output="feel">{{state.feel}}</output></span><input data-slk-quick="feel" type="range" min="0" max="100" value="{{state.feel}}" {{#unless canManage}}disabled{{/unless}}></label>
+    <label><span>{{localize "SLK.Mode.Phase"}} <output data-slk-output="phase">{{state.phase}}</output></span><input data-slk-quick="phase" type="range" min="0" max="100" value="{{state.phase}}" {{#unless canManage}}disabled{{/unless}}></label>
+    <label><span>{{localize "SLK.Mode.Clock"}} <output data-slk-output="clockMinutes">{{clockLabel}}</output></span><input data-slk-quick="clockMinutes" data-format="clock" type="range" min="0" max="1439" step="15" value="{{state.clockMinutes}}" {{#unless canManage}}disabled{{/unless}}></label>
+    <label><span>{{localize "SLK.Mode.Imperial"}} <output data-slk-output="imperialBell">{{state.imperialBell}}</output></span><input data-slk-quick="imperialBell" type="range" min="1" max="33" value="{{state.imperialBell}}" {{#unless canManage}}disabled{{/unless}}></label>
+    <label><span>{{localize "SLK.Moon.Title"}}: <output data-slk-output="moonIndex">{{moonLabel}}</output></span><input data-slk-quick="moonIndex" data-format="moon" type="range" min="0" max="4" value="{{state.moonIndex}}" {{#unless canManage}}disabled{{/unless}}></label>
+    <label><span>{{localize "SLK.Season.Title"}}</span><select data-slk-quick="season" {{#unless canManage}}disabled{{/unless}}>{{#each seasons}}<option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <div class="slk-floating-note">{{#if (slkEq mode "imperial")}}{{watchLabel}} · {{localize "SLK.Imperial.BellInWatch"}} {{bellInWatch}}{{else}}{{localize "SLK.Floating.ActiveMode"}}: {{#each modes}}{{#if active}}{{label}}{{/if}}{{/each}}{{/if}}</div>
+    <div class="slk-floating-behavior {{#if showApplyControls}}staged{{else}}immediate{{/if}}"><i class="fa-solid {{#if showApplyControls}}fa-hourglass-half{{else}}fa-bolt{{/if}}" aria-hidden="true"></i><span>{{controlBehaviorLabel}}</span></div>
+    {{#if showApplyControls}}
+      <div class="slk-floating-apply">
+        <button type="button" data-action="discardChanges" {{#unless hasPendingChanges}}disabled{{/unless}}><i class="fa-solid fa-rotate-left"></i> {{localize "SLK.Apply.Discard"}}</button>
+        <button type="button" data-action="applyChanges" class="slk-primary-action" {{#unless canApplyChanges}}disabled{{/unless}}><i class="fa-solid fa-check"></i> {{localize "SLK.Apply.Button"}}</button>
+      </div>
+    {{/if}}
+    {{#if sceneSyncEnabled}}<div class="slk-floating-sync"><i class="fa-solid fa-arrows-rotate"></i> {{sceneSyncLabel}}</div>{{/if}}
+  {{else}}<p>{{localize "SLK.Error.NoScene"}}</p>{{/if}}
+</div>

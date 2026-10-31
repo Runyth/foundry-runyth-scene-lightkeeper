@@ -1,0 +1,23 @@
+{
+  "name": "runyth-scene-lightkeeper",
+  "version": "1.1.6",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0 <27"
+  },
+  "scripts": {
+    "test": "node --unhandled-rejections=strict --test tests/*.test.mjs",
+    "syntax": "node tools/check-syntax.mjs",
+    "audit": "node tools/static-audit.mjs",
+    "check": "npm run syntax && npm test && npm run audit && npm run localization",
+    "package": "python3 tools/package.py",
+    "release:verify": "python3 tools/release-gate.py",
+    "localization": "node tools/check-localization.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Runyth/foundry-runyth-scene-lightkeeper.git"
+  },
+  "license": "AGPL-3.0-or-later"
+}

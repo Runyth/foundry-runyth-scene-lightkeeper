@@ -1,0 +1,259 @@
+
+> runyth-scene-lightkeeper@1.0.0 check
+> npm run syntax && npm test && node tools/static-audit.mjs
+
+
+> runyth-scene-lightkeeper@1.0.0 syntax
+> node tools/check-syntax.mjs
+
+Syntax validation passed for 12 production modules.
+
+> runyth-scene-lightkeeper@1.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: all three interfaces load as ApplicationV2 subclasses
+ok 1 - all three interfaces load as ApplicationV2 subclasses
+  ---
+  duration_ms: 0.770859
+  type: 'test'
+  ...
+# Subtest: primary windows declare stable IDs, templates, and responsive geometry
+ok 2 - primary windows declare stable IDs, templates, and responsive geometry
+  ---
+  duration_ms: 0.252707
+  type: 'test'
+  ...
+# Subtest: ApplicationV2 action maps use module-specific actions
+ok 3 - ApplicationV2 action maps use module-specific actions
+  ---
+  duration_ms: 0.16088
+  type: 'test'
+  ...
+# Subtest: native close hooks do not block window closure on asynchronous setting writes
+ok 4 - native close hooks do not block window closure on asynchronous setting writes
+  ---
+  duration_ms: 1.005328
+  type: 'test'
+  ...
+# Subtest: perceived darkness is a direct understandable 0-100 mapping
+ok 5 - perceived darkness is a direct understandable 0-100 mapping
+  ---
+  duration_ms: 2.002292
+  type: 'test'
+  ...
+# Subtest: summer mornings are brighter than winter mornings
+ok 6 - summer mornings are brighter than winter mornings
+  ---
+  duration_ms: 0.436305
+  type: 'test'
+  ...
+# Subtest: moonlight reduces darkness only at night
+ok 7 - moonlight reduces darkness only at night
+  ---
+  duration_ms: 0.240224
+  type: 'test'
+  ...
+# Subtest: day phase runs from sunrise through sunset into night
+ok 8 - day phase runs from sunrise through sunset into night
+  ---
+  duration_ms: 0.22316
+  type: 'test'
+  ...
+# Subtest: ordinary clock formatting and Imperial conversion are bounded
+ok 9 - ordinary clock formatting and Imperial conversion are bounded
+  ---
+  duration_ms: 0.388215
+  type: 'test'
+  ...
+# Subtest: Imperial watches contain eleven Glocken each
+ok 10 - Imperial watches contain eleven Glocken each
+  ---
+  duration_ms: 1.154513
+  type: 'test'
+  ...
+# Subtest: Imperial days map to three Umgänge of eleven days
+ok 11 - Imperial days map to three Umgänge of eleven days
+  ---
+  duration_ms: 0.229863
+  type: 'test'
+  ...
+# Subtest: 33 Imperial months map deterministically to seasons
+ok 12 - 33 Imperial months map deterministically to seasons
+  ---
+  duration_ms: 0.232739
+  type: 'test'
+  ...
+# runyth-scene-lightkeeper | Initialized v1.0.0; API 1.0.0.
+# Subtest: main module registers lifecycle hooks without eager Foundry mutations
+ok 13 - main module registers lifecycle hooks without eager Foundry mutations
+  ---
+  duration_ms: 0.812797
+  type: 'test'
+  ...
+# Subtest: init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+ok 14 - init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+  ---
+  duration_ms: 1.256533
+  type: 'test'
+  ...
+# Subtest: v13 Scene Controls are added once to a record with the required active tool
+ok 15 - v13 Scene Controls are added once to a record with the required active tool
+  ---
+  duration_ms: 1.062044
+  type: 'test'
+  ...
+# Subtest: ready completes without auto-opening or first-run dialog when disabled
+ok 16 - ready completes without auto-opening or first-run dialog when disabled
+  ---
+  duration_ms: 3.702138
+  type: 'test'
+  ...
+# Subtest: runtime exposes permanent entry points and the requested public API
+ok 17 - runtime exposes permanent entry points and the requested public API
+  ---
+  duration_ms: 1.246927
+  type: 'test'
+  ...
+# Subtest: window persistence is client-scoped and all major windows are resizable ApplicationV2
+ok 18 - window persistence is client-scoped and all major windows are resizable ApplicationV2
+  ---
+  duration_ms: 1.316627
+  type: 'test'
+  ...
+# Subtest: fog reset is explicit, GM-only, and uses the public FogManager
+ok 19 - fog reset is explicit, GM-only, and uses the public FogManager
+  ---
+  duration_ms: 0.229722
+  type: 'test'
+  ...
+# Subtest: global illumination defaults to the intuitive automatic wrapper while preserve remains available
+ok 20 - global illumination defaults to the intuitive automatic wrapper while preserve remains available
+  ---
+  duration_ms: 0.170087
+  type: 'test'
+  ...
+# Subtest: templates expose all requested intuitive control surfaces
+ok 21 - templates expose all requested intuitive control surfaces
+  ---
+  duration_ms: 0.253539
+  type: 'test'
+  ...
+# Subtest: every module-owned confirmation safely permits native window closure
+ok 22 - every module-owned confirmation safely permits native window closure
+  ---
+  duration_ms: 0.391991
+  type: 'test'
+  ...
+# Subtest: applying perceived darkness performs one contained Scene update
+ok 23 - applying perceived darkness performs one contained Scene update
+  ---
+  duration_ms: 1.394816
+  type: 'test'
+  ...
+# Subtest: automatic global illumination writes an explicit bounded cutoff
+ok 24 - automatic global illumination writes an explicit bounded cutoff
+  ---
+  duration_ms: 0.279972
+  type: 'test'
+  ...
+# Subtest: patching state preserves nested Imperial date fields
+ok 25 - patching state preserves nested Imperial date fields
+  ---
+  duration_ms: 0.896819
+  type: 'test'
+  ...
+# Subtest: scene mutations reject an unauthorized user
+ok 26 - scene mutations reject an unauthorized user
+  ---
+  duration_ms: 0.624071
+  type: 'test'
+  ...
+# Subtest: native vision, fog, and lock toggles update only their exact fields
+ok 27 - native vision, fog, and lock toggles update only their exact fields
+  ---
+  duration_ms: 0.307542
+  type: 'test'
+  ...
+# Subtest: fog reset is limited to a GM and the active canvas Scene
+ok 28 - fog reset is limited to a GM and the active canvas Scene
+  ---
+  duration_ms: 0.291094
+  type: 'test'
+  ...
+# Subtest: stored malformed Scene flags normalize to safe values
+ok 29 - stored malformed Scene flags normalize to safe values
+  ---
+  duration_ms: 0.188975
+  type: 'test'
+  ...
+# Subtest: all global-light modes are explicit and preserve does not write global-light fields
+ok 30 - all global-light modes are explicit and preserve does not write global-light fields
+  ---
+  duration_ms: 1.355015
+  type: 'test'
+  ...
+# Subtest: transition duration is clamped and passed as milliseconds
+ok 31 - transition duration is clamped and passed as milliseconds
+  ---
+  duration_ms: 0.37324
+  type: 'test'
+  ...
+# Subtest: all mutation helpers report a clean no-scene error
+ok 32 - all mutation helpers report a clean no-scene error
+  ---
+  duration_ms: 0.534224
+  type: 'test'
+  ...
+# Subtest: malformed state is normalized without losing safe defaults
+ok 33 - malformed state is normalized without losing safe defaults
+  ---
+  duration_ms: 0.88525
+  type: 'test'
+  ...
+# Subtest: only selected mode drives scene darkness
+ok 34 - only selected mode drives scene darkness
+  ---
+  duration_ms: 0.79432
+  type: 'test'
+  ...
+# Subtest: season can optionally derive from the Imperial month
+ok 35 - season can optionally derive from the Imperial month
+  ---
+  duration_ms: 0.244806
+  type: 'test'
+  ...
+# Subtest: all four modes return a native Foundry darkness value
+ok 36 - all four modes return a native Foundry darkness value
+  ---
+  duration_ms: 0.707344
+  type: 'test'
+  ...
+# Subtest: restored windows are clamped to the current viewport
+ok 37 - restored windows are clamped to the current viewport
+  ---
+  duration_ms: 0.693429
+  type: 'test'
+  ...
+# Subtest: only finite integer geometry is persisted
+ok 38 - only finite integer geometry is persisted
+  ---
+  duration_ms: 1.385947
+  type: 'test'
+  ...
+# Subtest: layout reset clears both client geometry records
+ok 39 - layout reset clears both client geometry records
+  ---
+  duration_ms: 0.245774
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 166.716707
+Static Foundry v13 audit passed: 16 runtime source files, 137 bilingual keys.

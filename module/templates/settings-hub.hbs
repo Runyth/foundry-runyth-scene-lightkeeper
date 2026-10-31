@@ -1,0 +1,15 @@
+<div class="slk-settings-content">
+  <header><i class="fa-solid fa-sun"></i><div><h2>{{localize "SLK.SettingsHub.Title"}}</h2><p>{{localize "SLK.SettingsHub.Intro"}}</p></div></header>
+  <div class="slk-settings-actions">
+    <button type="button" data-action="openGuide"><i class="fa-solid fa-circle-question"></i><span><strong>{{localize "SLK.Guide.Button"}}</strong><small>{{localize "SLK.Guide.ButtonHint"}}</small></span></button>
+    <button type="button" data-action="openPanel"><i class="fa-solid fa-sliders"></i><span><strong>{{localize "SLK.SettingsHub.OpenPanel"}}</strong><small>{{localize "SLK.SettingsHub.OpenPanelHint"}}</small></span></button>
+    <button type="button" data-action="toggleFloating" {{#unless floatingEnabled}}disabled{{/unless}}><i class="fa-solid fa-window-restore"></i><span><strong>{{localize "SLK.SettingsHub.Floating"}}</strong><small>{{localize "SLK.SettingsHub.FloatingHint"}}</small></span></button>
+    <button type="button" data-action="resetLayout"><i class="fa-solid fa-arrows-to-circle"></i><span><strong>{{localize "SLK.SettingsHub.ResetLayout"}}</strong><small>{{localize "SLK.SettingsHub.ResetLayoutHint"}}</small></span></button>
+  </div>
+  <section class="slk-settings-status {{#if sceneSyncEnabled}}active{{/if}}">
+    <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+    <div><h3>{{localize "SLK.SettingsHub.SceneSync"}}</h3><p>{{sceneSyncLabel}}</p><small>{{localize "SLK.SettingsHub.SceneSyncHint"}}</small></div>
+  </section>
+  <section><h3>{{localize "SLK.SettingsHub.HowItWorks"}}</h3><p>{{localize "SLK.SettingsHub.HowItWorksText"}}</p><ul><li>{{localize "SLK.SettingsHub.TipFeel"}}</li><li>{{localize "SLK.SettingsHub.TipTime"}}</li><li>{{localize "SLK.SettingsHub.TipFog"}}</li><li>{{localize "SLK.SettingsHub.TipSceneSync"}}</li></ul></section>
+  <footer>{{footerLabel}}</footer>
+</div>

@@ -1,0 +1,605 @@
+
+> runyth-scene-lightkeeper@1.1.5 check
+> npm run syntax && npm test && npm run audit && npm run localization
+
+
+> runyth-scene-lightkeeper@1.1.5 syntax
+> node tools/check-syntax.mjs
+
+Syntax validation passed for 17 production modules.
+
+> runyth-scene-lightkeeper@1.1.5 test
+> node --unhandled-rejections=strict --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: every template data-action is mapped and every mapped action is rendered
+ok 1 - every template data-action is mapped and every mapped action is rendered
+  ---
+  duration_ms: 1.589389
+  type: 'test'
+  ...
+# Subtest: all ControlPanel buttons execute with Foundry ApplicationV2 instance binding
+ok 2 - all ControlPanel buttons execute with Foundry ApplicationV2 instance binding
+  ---
+  duration_ms: 3.006251
+  type: 'test'
+  ...
+# Subtest: floating-board and settings-hub buttons execute with instance binding
+ok 3 - floating-board and settings-hub buttons execute with instance binding
+  ---
+  duration_ms: 0.401326
+  type: 'test'
+  ...
+# Subtest: UI action failures are contained and reported without unhandled rejection
+ok 4 - UI action failures are contained and reported without unhandled rejection
+  ---
+  duration_ms: 0.241097
+  type: 'test'
+  ...
+# Subtest: live preview tolerates synchronous returns and synchronous animation failures
+ok 5 - live preview tolerates synchronous returns and synchronous animation failures
+  ---
+  duration_ms: 4.264489
+  type: 'test'
+  ...
+# Subtest: Scene Controls callbacks execute and malformed array controls are ignored
+ok 6 - Scene Controls callbacks execute and malformed array controls are ignored
+  ---
+  duration_ms: 1.509249
+  type: 'test'
+  ...
+# Subtest: ControlPanel field conversion preserves types and nested Imperial dates
+ok 7 - ControlPanel field conversion preserves types and nested Imperial dates
+  ---
+  duration_ms: 0.25563
+  type: 'test'
+  ...
+# Subtest: ControlPanel change events and floating quick controls reach the Scene service
+ok 8 - ControlPanel change events and floating quick controls reach the Scene service
+  ---
+  duration_ms: 2.039095
+  type: 'test'
+  ...
+# Subtest: render hooks wire both input and change listeners to every interactive control
+ok 9 - render hooks wire both input and change listeners to every interactive control
+  ---
+  duration_ms: 0.56585
+  type: 'test'
+  ...
+# Subtest: Scene Control entry-point failures use the same contained error boundary
+ok 10 - Scene Control entry-point failures use the same contained error boundary
+  ---
+  duration_ms: 0.414685
+  type: 'test'
+  ...
+# Subtest: mode buttons can restore legacy immediate application
+ok 11 - mode buttons can restore legacy immediate application
+  ---
+  duration_ms: 0.732597
+  type: 'test'
+  ...
+# Subtest: global staged-control mode waits for Apply while presets stay immediate
+ok 12 - global staged-control mode waits for Apply while presets stay immediate
+  ---
+  duration_ms: 0.696543
+  type: 'test'
+  ...
+# Subtest: fog reset cancellation prevents destructive execution
+ok 13 - fog reset cancellation prevents destructive execution
+  ---
+  duration_ms: 0.147218
+  type: 'test'
+  ...
+# Subtest: immediate side controls preserve a mode tab being inspected without applying it
+ok 14 - immediate side controls preserve a mode tab being inspected without applying it
+  ---
+  duration_ms: 0.346775
+  type: 'test'
+  ...
+# Subtest: all three interfaces load as ApplicationV2 subclasses
+ok 15 - all three interfaces load as ApplicationV2 subclasses
+  ---
+  duration_ms: 0.769531
+  type: 'test'
+  ...
+# Subtest: primary windows declare stable IDs, templates, and responsive geometry
+ok 16 - primary windows declare stable IDs, templates, and responsive geometry
+  ---
+  duration_ms: 0.252615
+  type: 'test'
+  ...
+# Subtest: ApplicationV2 action maps use module-specific actions
+ok 17 - ApplicationV2 action maps use module-specific actions
+  ---
+  duration_ms: 0.119918
+  type: 'test'
+  ...
+# Subtest: native close hooks do not block window closure on asynchronous setting writes
+ok 18 - native close hooks do not block window closure on asynchronous setting writes
+  ---
+  duration_ms: 0.317711
+  type: 'test'
+  ...
+# Subtest: perceived darkness is a direct understandable 0-100 mapping
+ok 19 - perceived darkness is a direct understandable 0-100 mapping
+  ---
+  duration_ms: 1.433707
+  type: 'test'
+  ...
+# Subtest: summer mornings are brighter than winter mornings
+ok 20 - summer mornings are brighter than winter mornings
+  ---
+  duration_ms: 0.300666
+  type: 'test'
+  ...
+# Subtest: moonlight reduces darkness only at night
+ok 21 - moonlight reduces darkness only at night
+  ---
+  duration_ms: 0.116773
+  type: 'test'
+  ...
+# Subtest: day phase runs from sunrise through sunset into night
+ok 22 - day phase runs from sunrise through sunset into night
+  ---
+  duration_ms: 0.125326
+  type: 'test'
+  ...
+# Subtest: ordinary clock formatting and Imperial conversion are bounded
+ok 23 - ordinary clock formatting and Imperial conversion are bounded
+  ---
+  duration_ms: 0.243581
+  type: 'test'
+  ...
+# Subtest: Imperial watches contain eleven Glocken each
+ok 24 - Imperial watches contain eleven Glocken each
+  ---
+  duration_ms: 0.773588
+  type: 'test'
+  ...
+# Subtest: Imperial days map to three Umgänge of eleven days
+ok 25 - Imperial days map to three Umgänge of eleven days
+  ---
+  duration_ms: 0.143543
+  type: 'test'
+  ...
+# Subtest: 33 Imperial months map deterministically to seasons
+ok 26 - 33 Imperial months map deterministically to seasons
+  ---
+  duration_ms: 0.10131
+  type: 'test'
+  ...
+# Subtest: 12 ordinary months map deterministically to seasons
+ok 27 - 12 ordinary months map deterministically to seasons
+  ---
+  duration_ms: 0.238074
+  type: 'test'
+  ...
+# Subtest: course-of-day context exposes ordinary, Imperial, and complementary approximate times
+ok 28 - course-of-day context exposes ordinary, Imperial, and complementary approximate times
+  ---
+  duration_ms: 2.631545
+  type: 'test'
+  ...
+# Subtest: 24-hour context retains ordinary date and derives season from its month
+ok 29 - 24-hour context retains ordinary date and derives season from its month
+  ---
+  duration_ms: 1.074094
+  type: 'test'
+  ...
+# Subtest: Imperial context derives season from its 33-month date and exposes ordinary equivalent
+ok 30 - Imperial context derives season from its 33-month date and exposes ordinary equivalent
+  ---
+  duration_ms: 0.425071
+  type: 'test'
+  ...
+# Subtest: floating board rejects generic close paths and only its explicit X action closes it
+ok 31 - floating board rejects generic close paths and only its explicit X action closes it
+  ---
+  duration_ms: 1.551923
+  type: 'test'
+  ...
+# Subtest: floating board restores itself if an external teardown bypasses its public close guard
+ok 32 - floating board restores itself if an external teardown bypasses its public close guard
+  ---
+  duration_ms: 4.748547
+  type: 'test'
+  ...
+# Subtest: floating board removes minimization and hides the generic native close control
+ok 33 - floating board removes minimization and hides the generic native close control
+  ---
+  duration_ms: 0.290201
+  type: 'test'
+  ...
+# Subtest: mini-dashboard explains why Apply is absent by default and exposes it in staged mode
+ok 34 - mini-dashboard explains why Apply is absent by default and exposes it in staged mode
+  ---
+  duration_ms: 0.259806
+  type: 'test'
+  ...
+# Subtest: floating board restores on visibility return and Foundry window focus
+ok 35 - floating board restores on visibility return and Foundry window focus
+  ---
+  duration_ms: 15.676143
+  type: 'test'
+  ...
+# Subtest: Foundry manifest exposes modular language packs with English as the baseline
+ok 36 - Foundry manifest exposes modular language packs with English as the baseline
+  ---
+  duration_ms: 1.081344
+  type: 'test'
+  ...
+# Subtest: all bundled languages implement the complete English contract
+ok 37 - all bundled languages implement the complete English contract
+  ---
+  duration_ms: 0.322018
+  type: 'test'
+  ...
+# Subtest: format placeholders remain identical in every bundled language
+ok 38 - format placeholders remain identical in every bundled language
+  ---
+  duration_ms: 1.594597
+  type: 'test'
+  ...
+# Subtest: the default English pack contains the localized release surfaces
+ok 39 - the default English pack contains the localized release surfaces
+  ---
+  duration_ms: 0.169091
+  type: 'test'
+  ...
+# Subtest: no module-specific language selector competes with Foundry core
+ok 40 - no module-specific language selector competes with Foundry core
+  ---
+  duration_ms: 0.366724
+  type: 'test'
+  ...
+# runyth-scene-lightkeeper | Initialized v1.1.5; API 1.1.5.
+# Subtest: main module registers lifecycle hooks without eager Foundry mutations
+ok 41 - main module registers lifecycle hooks without eager Foundry mutations
+  ---
+  duration_ms: 0.606119
+  type: 'test'
+  ...
+# Subtest: init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+ok 42 - init registers settings, a valid ApplicationV2 menu, controls, helper, and API
+  ---
+  duration_ms: 1.643148
+  type: 'test'
+  ...
+# Subtest: floating-board launcher calls only open or focus and never toggles the board closed
+ok 43 - floating-board launcher calls only open or focus and never toggles the board closed
+  ---
+  duration_ms: 0.316069
+  type: 'test'
+  ...
+# Subtest: v13 Scene Controls are added once to a record with the required active tool
+ok 44 - v13 Scene Controls are added once to a record with the required active tool
+  ---
+  duration_ms: 0.194018
+  type: 'test'
+  ...
+# Subtest: ready completes without auto-opening or first-run dialog when disabled
+ok 45 - ready completes without auto-opening or first-run dialog when disabled
+  ---
+  duration_ms: 6.537766
+  type: 'test'
+  ...
+# Subtest: setting-triggered Scene Controls refresh contains synchronous render failures
+ok 46 - setting-triggered Scene Controls refresh contains synchronous render failures
+  ---
+  duration_ms: 0.839927
+  type: 'test'
+  ...
+# runyth-scene-lightkeeper | Initialized v1.1.5; API 1.1.5.
+# Subtest: rapid scene switches carry the original current illumination to the final scene
+ok 47 - rapid scene switches carry the original current illumination to the final scene
+  ---
+  duration_ms: 3.838636
+  type: 'test'
+  ...
+# Subtest: runtime exposes permanent entry points and the requested public API
+ok 48 - runtime exposes permanent entry points and the requested public API
+  ---
+  duration_ms: 2.04882
+  type: 'test'
+  ...
+# Subtest: window persistence is client-scoped and all major windows are resizable ApplicationV2
+ok 49 - window persistence is client-scoped and all major windows are resizable ApplicationV2
+  ---
+  duration_ms: 0.498069
+  type: 'test'
+  ...
+# Subtest: fog reset is explicit, GM-only, and uses the public FogManager
+ok 50 - fog reset is explicit, GM-only, and uses the public FogManager
+  ---
+  duration_ms: 0.238474
+  type: 'test'
+  ...
+# Subtest: global illumination defaults to the intuitive automatic wrapper while preserve remains available
+ok 51 - global illumination defaults to the intuitive automatic wrapper while preserve remains available
+  ---
+  duration_ms: 0.415487
+  type: 'test'
+  ...
+# Subtest: templates expose all requested intuitive control surfaces
+ok 52 - templates expose all requested intuitive control surfaces
+  ---
+  duration_ms: 0.278724
+  type: 'test'
+  ...
+# Subtest: every module-owned dialog safely permits native window closure
+ok 53 - every module-owned dialog safely permits native window closure
+  ---
+  duration_ms: 0.385713
+  type: 'test'
+  ...
+# Subtest: fog reset confirmation is centralized and cannot be bypassed by the panel or toolbar
+ok 54 - fog reset confirmation is centralized and cannot be bypassed by the panel or toolbar
+  ---
+  duration_ms: 0.172546
+  type: 'test'
+  ...
+# Subtest: scene-switch updates cannot force closed module windows back open
+ok 55 - scene-switch updates cannot force closed module windows back open
+  ---
+  duration_ms: 0.275319
+  type: 'test'
+  ...
+# Subtest: scene-switch synchronization is isolated from fog, vision, tokens, walls, and ambient lights
+ok 56 - scene-switch synchronization is isolated from fog, vision, tokens, walls, and ambient lights
+  ---
+  duration_ms: 0.38418
+  type: 'test'
+  ...
+# Subtest: release tooling produces isolated install, source, and documentation archives
+ok 57 - release tooling produces isolated install, source, and documentation archives
+  ---
+  duration_ms: 0.35087
+  type: 'test'
+  ...
+# Subtest: grade synchronization copies exact visible darkness and global illumination only
+ok 58 - grade synchronization copies exact visible darkness and global illumination only
+  ---
+  duration_ms: 3.548686
+  type: 'test'
+  ...
+# Subtest: profile synchronization carries time, moon, season mode, both dates, and global light
+ok 59 - profile synchronization carries time, moon, season mode, both dates, and global light
+  ---
+  duration_ms: 1.720333
+  type: 'test'
+  ...
+# Subtest: remembered lighting supports initial-load synchronization without a source scene
+ok 60 - remembered lighting supports initial-load synchronization without a source scene
+  ---
+  duration_ms: 1.946949
+  type: 'test'
+  ...
+# Subtest: disabled synchronization and already matching scenes avoid scene writes
+ok 61 - disabled synchronization and already matching scenes avoid scene writes
+  ---
+  duration_ms: 0.890822
+  type: 'test'
+  ...
+# Subtest: applying perceived darkness performs one contained Scene update
+ok 62 - applying perceived darkness performs one contained Scene update
+  ---
+  duration_ms: 1.631621
+  type: 'test'
+  ...
+# Subtest: automatic global illumination writes an explicit bounded cutoff
+ok 63 - automatic global illumination writes an explicit bounded cutoff
+  ---
+  duration_ms: 0.331502
+  type: 'test'
+  ...
+# Subtest: patching state preserves nested Imperial date fields
+ok 64 - patching state preserves nested Imperial date fields
+  ---
+  duration_ms: 0.891563
+  type: 'test'
+  ...
+# Subtest: scene mutations reject an unauthorized user
+ok 65 - scene mutations reject an unauthorized user
+  ---
+  duration_ms: 0.763293
+  type: 'test'
+  ...
+# Subtest: native vision, fog, and lock toggles update only their exact fields
+ok 66 - native vision, fog, and lock toggles update only their exact fields
+  ---
+  duration_ms: 0.193237
+  type: 'test'
+  ...
+# Subtest: fog reset is limited to a GM and the active canvas Scene
+ok 67 - fog reset is limited to a GM and the active canvas Scene
+  ---
+  duration_ms: 0.313886
+  type: 'test'
+  ...
+# Subtest: stored malformed Scene flags normalize to safe values
+ok 68 - stored malformed Scene flags normalize to safe values
+  ---
+  duration_ms: 1.105611
+  type: 'test'
+  ...
+# Subtest: all global-light modes are explicit and preserve does not write global-light fields
+ok 69 - all global-light modes are explicit and preserve does not write global-light fields
+  ---
+  duration_ms: 0.40462
+  type: 'test'
+  ...
+# Subtest: transition duration is clamped and passed as milliseconds
+ok 70 - transition duration is clamped and passed as milliseconds
+  ---
+  duration_ms: 0.439483
+  type: 'test'
+  ...
+# Subtest: all mutation helpers report a clean no-scene error
+ok 71 - all mutation helpers report a clean no-scene error
+  ---
+  duration_ms: 0.692668
+  type: 'test'
+  ...
+# Subtest: safe interaction defaults require Apply for mode tabs but keep sliders immediate
+ok 72 - safe interaction defaults require Apply for mode tabs but keep sliders immediate
+  ---
+  duration_ms: 2.852683
+  type: 'test'
+  ...
+# Subtest: fog reset remains confirmed by default and can only be changed as a world setting
+ok 73 - fog reset remains confirmed by default and can only be changed as a world setting
+  ---
+  duration_ms: 0.227828
+  type: 'test'
+  ...
+# Subtest: calendar season derivation is opt-in and live slider preview is enabled per client
+ok 74 - calendar season derivation is opt-in and live slider preview is enabled per client
+  ---
+  duration_ms: 0.298363
+  type: 'test'
+  ...
+# Subtest: Settings sidebar launcher keeps the current size by default and offers a global compact mode
+ok 75 - Settings sidebar launcher keeps the current size by default and offers a global compact mode
+  ---
+  duration_ms: 0.273056
+  type: 'test'
+  ...
+# Subtest: changing launcher size updates an already-rendered Settings launcher immediately
+ok 76 - changing launcher size updates an already-rendered Settings launcher immediately
+  ---
+  duration_ms: 0.297121
+  type: 'test'
+  ...
+# Subtest: Settings launcher labels cannot overflow their fixed sidebar buttons
+ok 77 - Settings launcher labels cannot overflow their fixed sidebar buttons
+  ---
+  duration_ms: 0.725006
+  type: 'test'
+  ...
+# Subtest: compact launcher materially reduces height and hides all prose labels
+ok 78 - compact launcher materially reduces height and hides all prose labels
+  ---
+  duration_ms: 0.271362
+  type: 'test'
+  ...
+# Subtest: Foundry Settings sidebar receives one direct Lightkeeper launcher
+ok 79 - Foundry Settings sidebar receives one direct Lightkeeper launcher
+  ---
+  duration_ms: 4.552506
+  type: 'test'
+  ...
+# Subtest: Settings sidebar launcher remains GM-only
+ok 80 - Settings sidebar launcher remains GM-only
+  ---
+  duration_ms: 0.239736
+  type: 'test'
+  ...
+# Subtest: launcher uses short visible labels while preserving full accessible action names
+ok 81 - launcher uses short visible labels while preserving full accessible action names
+  ---
+  duration_ms: 0.157324
+  type: 'test'
+  ...
+# Subtest: compact global launcher mode renders the same actions in a compact card
+ok 82 - compact global launcher mode renders the same actions in a compact card
+  ---
+  duration_ms: 0.237993
+  type: 'test'
+  ...
+# Subtest: malformed state is normalized without losing safe defaults
+ok 83 - malformed state is normalized without losing safe defaults
+  ---
+  duration_ms: 1.451884
+  type: 'test'
+  ...
+# Subtest: calendar season uses ordinary months in 24-hour mode
+ok 84 - calendar season uses ordinary months in 24-hour mode
+  ---
+  duration_ms: 0.250671
+  type: 'test'
+  ...
+# Subtest: calendar season uses the 33-month calendar in Imperial mode
+ok 85 - calendar season uses the 33-month calendar in Imperial mode
+  ---
+  duration_ms: 0.575374
+  type: 'test'
+  ...
+# Subtest: calendar season remains manual for feeling and course-of-day modes
+ok 86 - calendar season remains manual for feeling and course-of-day modes
+  ---
+  duration_ms: 0.176663
+  type: 'test'
+  ...
+# Subtest: legacy Imperial derivation option remains supported
+ok 87 - legacy Imperial derivation option remains supported
+  ---
+  duration_ms: 0.253106
+  type: 'test'
+  ...
+# Subtest: all four modes return a native Foundry darkness value
+ok 88 - all four modes return a native Foundry darkness value
+  ---
+  duration_ms: 0.563175
+  type: 'test'
+  ...
+# Subtest: complementary time systems register, sort, filter by mode, and unregister
+ok 89 - complementary time systems register, sort, filter by mode, and unregister
+  ---
+  duration_ms: 2.569072
+  type: 'test'
+  ...
+# Subtest: formatters receive full display context including approximate mode
+ok 90 - formatters receive full display context including approximate mode
+  ---
+  duration_ms: 0.277221
+  type: 'test'
+  ...
+# Subtest: duplicate and malformed time-system definitions are rejected
+ok 91 - duplicate and malformed time-system definitions are rejected
+  ---
+  duration_ms: 0.455286
+  type: 'test'
+  ...
+# Subtest: broken, empty, and asynchronous formatters are contained without poisoning other systems
+ok 92 - broken, empty, and asynchronous formatters are contained without poisoning other systems
+  ---
+  duration_ms: 0.503356
+  type: 'test'
+  ...
+# Subtest: restored windows are clamped to the current viewport
+ok 93 - restored windows are clamped to the current viewport
+  ---
+  duration_ms: 0.6272
+  type: 'test'
+  ...
+# Subtest: only finite integer geometry is persisted
+ok 94 - only finite integer geometry is persisted
+  ---
+  duration_ms: 2.175598
+  type: 'test'
+  ...
+# Subtest: layout reset clears all client geometry records
+ok 95 - layout reset clears all client geometry records
+  ---
+  duration_ms: 0.25663
+  type: 'test'
+  ...
+1..95
+# tests 95
+# suites 0
+# pass 95
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 332.182632
+
+> runyth-scene-lightkeeper@1.1.5 audit
+> node tools/static-audit.mjs
+
+Static Foundry v13 audit passed: 21 runtime source files, 2 modular language packs, 204 English baseline keys.
+
+> runyth-scene-lightkeeper@1.1.5 localization
+> node tools/check-localization.mjs
+
+Foundry localization contract passed: 2 language packs, 204 namespaced keys, English baseline first.
