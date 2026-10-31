@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+
 from __future__ import annotations
 
 import hashlib
