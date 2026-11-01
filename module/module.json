@@ -2,7 +2,7 @@
   "id": "runyth-scene-lightkeeper",
   "title": "Runyth Scene Lightkeeper",
   "description": "An intuitive Foundry VTT v13 wrapper for staged or immediate scene darkness, synchronized illumination, extensible time systems, calendar-aware seasons, moonlight, global illumination, token vision, fog of war, and a pinned floating control board.",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "compatibility": {
     "minimum": "13",
     "verified": "13.351",
@@ -37,6 +37,6 @@
   "readme": "README.md",
   "url": "https://github.com/Runyth/foundry-runyth-scene-lightkeeper",
   "manifest": "https://github.com/Runyth/foundry-runyth-scene-lightkeeper/releases/latest/download/module.json",
-  "download": "https://github.com/Runyth/foundry-runyth-scene-lightkeeper/releases/download/v1.1.7/runyth-scene-lightkeeper-v1.1.7-mod.zip",
+  "download": "https://github.com/Runyth/foundry-runyth-scene-lightkeeper/releases/download/v1.1.8/runyth-scene-lightkeeper-v1.1.8-mod.zip",
   "changelog": "CHANGELOG.md"
 }

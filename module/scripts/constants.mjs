@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 export const MODULE_ID = "runyth-scene-lightkeeper";
-export const MODULE_VERSION = "1.1.7";
-export const API_VERSION = "1.1.7";
+export const MODULE_VERSION = "1.1.8";
+export const API_VERSION = "1.1.8";
 export const STATE_SCHEMA = 2;
 export const LIGHTING_SNAPSHOT_SCHEMA = 2;
 

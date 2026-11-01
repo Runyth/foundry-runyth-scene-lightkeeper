@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-// Copyright (C) 2026 Runyth. See the LICENSE file for rights and obligations.
+// Copyright (C) 2026 Daniel Braniewski. See the LICENSE file for rights and obligations.
 import test from "node:test";
 import assert from "node:assert/strict";
 
@@ -37,7 +37,7 @@ const values = new Map([
   ["sceneSyncInitialLoad", false],
   ["currentLightingSnapshot", {}]
 ]);
-const moduleRecord = { version: "1.1.7" };
+const moduleRecord = { version: "1.1.8" };
 
 globalThis.foundry = {
   applications: { api: { ApplicationV2: MockApplicationV2, DialogV2: MockDialogV2, HandlebarsApplicationMixin: (Base) => class extends Base {} } },
@@ -86,7 +86,7 @@ test("init registers settings, a valid ApplicationV2 menu, controls, helper, and
   assert.equal(typeof on.get("getSceneControlButtons"), "function");
   assert.equal(typeof on.get("renderSettings"), "function");
   assert.equal(typeof Handlebars.helpers.slkEq, "function");
-  assert.equal(moduleRecord.api.apiVersion, "1.1.7");
+  assert.equal(moduleRecord.api.apiVersion, "1.1.8");
   assert.equal(globalThis.SceneLightkeeper, moduleRecord.api);
   assert.equal(typeof moduleRecord.api.openFloating, "function");
   assert.equal(typeof moduleRecord.api.registerTimeSystem, "function");
